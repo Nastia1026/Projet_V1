@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="miniprojet.projet_v1.model.controller.dashboard.AdminDashboardController">
+
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <!-- Section Création de Cours -->
+    <Label text="Création de Cours" style="-fx-font-weight: bold; -fx-font-size: 16;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="100"/>
+            <ColumnConstraints prefWidth="200"/>
+        </columnConstraints>
+
+        <!-- Nom du Cours -->
+        <Label text="Nom du cours:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nomCoursField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <!-- Matière -->
+        <Label text="Matière:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="matiereCombo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <!-- Salle -->
+        <Label text="Salle:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="salleCombo" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button text="Créer le Cours" onAction="#handleCreerCours"
+            style="-fx-base: #4CAF50; -fx-text-fill: white;"/>
+
+    <!-- Séparateur -->
+    <Separator padding="10 0"/>
+
+    <!-- Section Statistiques -->
+    <Label text="Statistiques" style="-fx-font-weight: bold;"/>
+    <Button text="Générer les Statistiques" onAction="#handleGenererStats"/>
+    <TextArea fx:id="statsArea" prefHeight="100" editable="false"/>
+</VBox>

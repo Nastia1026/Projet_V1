@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="miniprojet.projet_v1.model.controller.LoginController" <!-- Chemin complet -->
+        spacing="10"
+        alignment="CENTER"
+        prefWidth="400"
+        prefHeight="300">
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="miniprojet.projet_v1.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<Label text="Connexion" style="-fx-font-size: 24;"/>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<TextField fx:id="emailField" promptText="Email"/> <!-- fx:id exact -->
+<PasswordField fx:id="passwordField" promptText="Mot de passe"/> <!-- fx:id exact -->
+
+<Button text="Se connecter" onAction="#handleLogin"/> <!-- Correspond à la méthode -->
+
+<Label fx:id="errorLabel" style="-fx-text-fill: red;" visible="false"/>
+        </VBox>
